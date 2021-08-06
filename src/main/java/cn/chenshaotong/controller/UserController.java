@@ -1,17 +1,25 @@
 package cn.chenshaotong.controller;
 
 
+import cn.chenshaotong.listener.event.UserEvent;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpRequest;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
 @RestController
+@Validated
 @RequestMapping("/api/common")
 public class UserController {
 
@@ -27,4 +35,22 @@ public class UserController {
                                    LocalDateTime date) {
         return date.toString();
     }
+
+    @PostMapping("/valid")
+    public String valid( @NotNull String data) {
+        System.out.println(data);
+        return "success";
+    }
+
+    @Autowired
+    private ApplicationContext applicationContext;
+
+    @PostMapping("/event")
+    public String send(String data) {
+        applicationContext.publishEvent(
+                new UserEvent(applicationContext, "你好"));
+        return "success";
+    }
+
+
 }

@@ -17,9 +17,10 @@ import java.time.LocalDateTime;
 public class CacheController {
 
 
+    // 51秒钟后失效
     @PostMapping("/cst")
     @Cacheable(
-            cacheNames = "chenst",
+            cacheNames = "chenst#51",
             key = "#id + '-' + #name",
             unless = "#result == null")
     public User getUserName(  @RequestParam String id,@RequestParam String name) {

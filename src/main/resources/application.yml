@@ -1,3 +1,4 @@
+
 server:
   port: 8080
 
@@ -23,3 +24,15 @@ spring:
         min-idle: 0
     # 连接超时时间（毫秒） 去链接redis服务端
     timeout: 6000
+
+  servlet:
+    multipart:
+      max-request-size: 10MB
+      max-file-size: 10MB
+
+
+
+custom:
+  value: custom
+
+
