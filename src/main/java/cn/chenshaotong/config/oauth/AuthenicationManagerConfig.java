@@ -1,4 +1,4 @@
-package cn.chenshaotong.config;
+package cn.chenshaotong.config.oauth;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

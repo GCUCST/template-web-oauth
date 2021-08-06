@@ -27,5 +27,4 @@ public class UserController {
                                    LocalDateTime date) {
         return date.toString();
     }
-
 }
