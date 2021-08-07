@@ -19,8 +19,8 @@ public class InitApp {
     @Value("${custom.value}")
     private String value;
 
-    @Autowired
-    private RestTemplate restTemplate;
+//    @Autowired
+//    private RestTemplate restTemplate;
 
     @PostConstruct
     public void init(){
