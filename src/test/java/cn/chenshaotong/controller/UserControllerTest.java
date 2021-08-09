@@ -4,6 +4,8 @@ import cn.chenshaotong.dto.UserDto;
 import cn.chenshaotong.entity.User;
 import cn.chenshaotong.mapper.UserMapper;
 import cn.chenshaotong.repository.UserRepository;
+import cn.hutool.crypto.SecureUtil;
+import cn.hutool.crypto.digest.MD5;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,10 +65,14 @@ class UserControllerTest {
 
         int size = cst.size();
         System.out.println(size);
-
-
     }
 
+    @Test
+    void test5() {
+        MD5 md5 = SecureUtil.md5();
+        System.out.println(md5.toString());
+
+    }
 
 
 
