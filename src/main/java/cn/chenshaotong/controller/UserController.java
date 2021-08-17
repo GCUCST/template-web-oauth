@@ -7,10 +7,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpRequest;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -23,7 +20,7 @@ import java.time.LocalDateTime;
 @RequestMapping("/api/common")
 public class UserController {
 
-    @PostMapping("/get")
+    @GetMapping("/get")
     public String getUserName(HttpServletRequest request) {
         System.out.println(request.getPathInfo());
         return "success";

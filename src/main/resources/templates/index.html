@@ -1,10 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>开始使用 layui</title>
+    <link rel="stylesheet" type="text/css" href="/layui-v2.6.8/layui/css/layui.css">
 </head>
 <body>
-home
+<script src="/layui-v2.6.8/layui/layui.js"></script>
+<script>
+    layui.use(['layer', 'form'], function(){
+        var layer = layui.layer;
+        layer.msg('Hello World');
+    });
+    layui.use('element', function(){
+        var element = layui.element;
+    });
+    let clickFunc = function (c){
+        console.log("开adsasd 22笑..."+c)
+    }
+
+</script>
+
+<div class="layui-container">
+    <button onclick="clickFunc(this)" type="button" class="layui-btn">一个标dss准的按钮</button>
+    <div class="layui-progress">
+        <div class="layui-progress-bar" lay-percent="10%"></div>
+    </div>
+    <div class="layui-anim layui-anim-up layui-anim-loop"></div>
+
+</div>
+
+
 </body>
 </html>
