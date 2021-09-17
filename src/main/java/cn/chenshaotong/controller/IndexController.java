@@ -1,4 +1,4 @@
-package cn.chenshaotong.controller.web;
+package cn.chenshaotong.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
