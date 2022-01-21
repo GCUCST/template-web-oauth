@@ -11,16 +11,19 @@ import lombok.experimental.UtilityClass;
 @UtilityClass
 public class UserMapper {
 
-    private static final ObjectMapper objectMapper = new ObjectMapper();
-    static {
-        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
-        objectMapper.registerModule(new JavaTimeModule());
-    }
-    public User mapToUser(UserDto userDto){
-        return objectMapper.convertValue(userDto,User.class);
-    }
-    public UserDto mapToUserDto(User user){
-        return objectMapper.convertValue(user,UserDto.class);
-    }
+  private static final ObjectMapper objectMapper = new ObjectMapper();
+
+  static {
+    objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+    objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+    objectMapper.registerModule(new JavaTimeModule());
+  }
+
+  public User mapToUser(UserDto userDto) {
+    return objectMapper.convertValue(userDto, User.class);
+  }
+
+  public UserDto mapToUserDto(User user) {
+    return objectMapper.convertValue(user, UserDto.class);
+  }
 }

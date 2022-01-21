@@ -6,11 +6,10 @@ import org.springframework.context.ApplicationEvent;
 @Getter
 public class UserEvent extends ApplicationEvent {
 
-    private String msg;
+  private String msg;
 
-
-    public UserEvent(Object source,String msg) {
-        super(source);
-        this.msg = msg;
-    }
+  public UserEvent(Object source, String msg) {
+    super(source);
+    this.msg = msg;
+  }
 }

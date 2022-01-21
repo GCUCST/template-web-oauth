@@ -7,10 +7,9 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class IndexController {
 
-    @RequestMapping("index")
-    public ModelAndView home() {
-        ModelAndView mv = new ModelAndView("index");
-        return mv;
-    }
-
+  @RequestMapping("index")
+  public ModelAndView home() {
+    ModelAndView mv = new ModelAndView("index");
+    return mv;
+  }
 }

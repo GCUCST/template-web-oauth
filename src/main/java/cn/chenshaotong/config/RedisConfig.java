@@ -118,13 +118,13 @@ public class RedisConfig extends CachingConfigurerSupport {
     objectMapper.registerModule(new Jdk8Module());
     objectMapper.setDateFormat(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
 
-//    Hibernate5Module hibernate5Module = new Hibernate5Module();
-//    // 禁用(表示要忽略@Transient字段属性,默认为true,设置为false禁用)
-//    hibernate5Module.disable(Hibernate5Module.Feature.USE_TRANSIENT_ANNOTATION);
-//    // 延时加载的对象不使用时设置为null
-//    hibernate5Module.enable(
-//        Hibernate5Module.Feature.SERIALIZE_IDENTIFIER_FOR_LAZY_NOT_LOADED_OBJECTS);
-//    objectMapper.registerModule(hibernate5Module);
+    //    Hibernate5Module hibernate5Module = new Hibernate5Module();
+    //    // 禁用(表示要忽略@Transient字段属性,默认为true,设置为false禁用)
+    //    hibernate5Module.disable(Hibernate5Module.Feature.USE_TRANSIENT_ANNOTATION);
+    //    // 延时加载的对象不使用时设置为null
+    //    hibernate5Module.enable(
+    //        Hibernate5Module.Feature.SERIALIZE_IDENTIFIER_FOR_LAZY_NOT_LOADED_OBJECTS);
+    //    objectMapper.registerModule(hibernate5Module);
 
     // 使用Jackson2JsonRedisSerializer来序列化和反序列化redis的value值
     Jackson2JsonRedisSerializer<Object> jackson2JsonRedisSerializer =

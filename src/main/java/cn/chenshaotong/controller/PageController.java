@@ -1,6 +1,5 @@
 package cn.chenshaotong.controller;
 
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,16 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/page")
 public class PageController {
 
+  @GetMapping("/index")
+  public String index() {
+    return "index";
+  }
 
-
-    @GetMapping("/index")
-    public String index(){
-     return "index";
-    }
-
-    @GetMapping("/login")
-    public String login(){
-        return "login";
-    }
-
+  @GetMapping("/login")
+  public String login() {
+    return "login";
+  }
 }

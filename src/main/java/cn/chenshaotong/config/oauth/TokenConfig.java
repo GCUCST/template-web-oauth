@@ -17,7 +17,6 @@ public class TokenConfig {
     return new JwtTokenStore(accessTokenConverter());
   }
 
-
   @Bean
   public JwtAccessTokenConverter accessTokenConverter() {
     JwtAccessTokenConverter converter = new JwtAccessTokenConverter();

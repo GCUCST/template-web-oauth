@@ -1,6 +1,6 @@
 package cn.chenshaotong.config.resource;
 
-import org.springframework.beans.factory.annotation.Value;
+import cn.chenshaotong.interceptor.LoginInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
@@ -12,7 +12,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class ResourceConfig implements WebMvcConfigurer {
-
 
   /** 跨域配置 */
   @Bean
@@ -31,10 +30,13 @@ public class ResourceConfig implements WebMvcConfigurer {
     return new CorsFilter(source);
   }
 
-
   @Override
   public void addInterceptors(InterceptorRegistry registry) {
-//    WebMvcConfigurer.super.addInterceptors(registry);
+    //    WebMvcConfigurer.super.addInterceptors(registry);
+    registry
+        .addInterceptor(new LoginInterceptor())
+        .addPathPatterns("/**")
+        .excludePathPatterns("/login");
   }
 
   @Override
