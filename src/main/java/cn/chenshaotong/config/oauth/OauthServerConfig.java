@@ -82,6 +82,7 @@ public class OauthServerConfig extends AuthorizationServerConfigurerAdapter {
     security
         .tokenKeyAccess("permitAll()")
         .checkTokenAccess("permitAll()")
-        .allowFormAuthenticationForClients();
+        .allowFormAuthenticationForClients()
+        .addTokenEndpointAuthenticationFilter(new MybeforeFileter());
   }
 }

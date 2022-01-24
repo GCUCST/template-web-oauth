@@ -18,5 +18,6 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
 
     // TODO：
     filterChain.doFilter(httpServletRequest, httpServletResponse);
+    System.out.println(1234567);
   }
 }
