@@ -8,6 +8,6 @@ public class MybeforeFileter implements Filter {
   public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
       throws IOException, ServletException {
     System.out.println("测试。。。。。");
-    chain.doFilter(request,response);
+    chain.doFilter(request, response);
   }
 }
